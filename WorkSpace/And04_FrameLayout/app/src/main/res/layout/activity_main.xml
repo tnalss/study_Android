@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="이전 이미지"
+        android:layout_margin="10dp"
+        />
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="다음 이미지"
+        android:layout_margin="10dp"
+        />
+
+
+</LinearLayout>
+
+    <!--0dp와 weight를 사용하게 되면 크기를 가진 다른뷰가
+    차지한 공간을 제외하고 나머지공간을 차지한다
+    그러면 아래 프레임레이아웃 weight도 1로 바꾸면 됨-->
+
+
+    <!--res 화면에 보이거나 하는 모든 리소스는 res폴더하위에서 관리됨
+    (layout,drawble...)-->
+    <FrameLayout
+       android:id="@+id/layout"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/imgv1"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/imgv2"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/imgv3"
+            android:scaleType="fitXY"
+            android:src="@drawable/img_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+<!--
+visibility : invisible 투명공간o
+                gone 안보이고 공간x
+        visible : default(기본보이는상태)-->
+
+    </FrameLayout>
+
+
+</LinearLayout>

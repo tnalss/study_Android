@@ -1,0 +1,80 @@
+package com.example.and04_framelayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity{
+
+    Button prev,next;
+    ArrayList<ImageView> img = new ArrayList<ImageView>();
+
+    int count = 0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        prev = findViewById(R.id.btn1);
+        next = findViewById(R.id.btn2);
+
+        img.add(findViewById(R.id.imgv1));
+        img.add(findViewById(R.id.imgv2));
+        img.add(findViewById(R.id.imgv3));
+
+        prev.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("최수민", "onClick: 버튼눌린횟수"+count);
+                count--;
+                if(count==-1) count=2;
+                view(img);
+            }
+        });
+
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("최수민", "onClick: 버튼눌린횟수"+count);
+                count++;
+                if(count==3 ) count=0;
+                view(img);
+            }
+        });
+
+//        CsmOnclickListener onclick = new CsmOnclickListener() {
+//            @Override
+//            public void onClick(String v) {
+//                Log.d("최수민"+v, "onClick: 온클릭CSM Interface");
+//
+//            }//왜 안찍힐까? -> 호출을해줘야한다.
+//        };
+//
+//        onclick.onClick("test");
+
+    }
+
+//    public void onClick(){
+//        Log.d("최수민", "onClick: 온클릭CSM");
+//    }
+//
+//
+//    interface CsmOnclickListener{
+//        public void onClick(String v);
+//    }
+
+    public void view(ArrayList<ImageView> img){
+        for(ImageView each : img){
+            each.setVisibility(View.GONE);
+        }
+
+        img.get(count).setVisibility(View.VISIBLE);
+
+    }
+}

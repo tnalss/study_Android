@@ -1,0 +1,80 @@
+package com.example.and04_framelayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity{
+
+    Button btn;
+    ImageView imgv1,imgv2,imgv3;
+    ArrayList<ImageView> img = new ArrayList<ImageView>();
+    // 이미지 뷰 세개를 하나의 자료구조로 묶어보기
+    int count =1;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+
+        btn = findViewById(R.id.btn);
+        imgv1 = findViewById(R.id.imgv1);
+        imgv2 = findViewById(R.id.imgv2);
+        imgv3 = findViewById(R.id.imgv3);
+
+        img.add(imgv1);
+        img.add(imgv2);
+        img.add(imgv3);
+
+
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Log.d("최수민", "onClick: 버튼눌린횟수"+count);
+                if(count==1){
+                    imgv2.setVisibility(View.VISIBLE);
+                }else if (count==2){
+                    imgv3.setVisibility(View.VISIBLE);
+                }else{
+                    imgv2.setVisibility(View.GONE);
+                    imgv3.setVisibility(View.GONE);
+                }
+                count++;
+                if(count>3){count=1;}
+                //imgv1.setVisibility(View.GONE);//xml디자인에서 visibility="gone"으로 해줬던거
+                //imgv2.setVisibility(View.VISIBLE);
+                //int status = imgv1.getVisibility();
+
+            }
+        });
+
+//        CsmOnclickListener onclick = new CsmOnclickListener() {
+//            @Override
+//            public void onClick(String v) {
+//                Log.d("최수민"+v, "onClick: 온클릭CSM Interface");
+//
+//            }//왜 안찍힐까? -> 호출을해줘야한다.
+//        };
+//
+//        onclick.onClick("test");
+
+    }
+
+//    public void onClick(){
+//        Log.d("최수민", "onClick: 온클릭CSM");
+//    }
+//
+//
+//    interface CsmOnclickListener{
+//        public void onClick(String v);
+//    }
+
+
+}
