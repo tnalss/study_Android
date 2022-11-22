@@ -577,7 +577,10 @@
             android:src="@drawable/img_banner1" />
     </LinearLayout>
 
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="카카오 나우"/>
     <!--배너겹치는부분-->
     <FrameLayout
         android:layout_width="wrap_content"
