@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--shape(모양) : 선, 동그라미, 네모 등... 여기서 만드는건 벡터-->
+    <gradient
+        android:angle="45"
+        android:centerColor="#E817242E"
+        android:startColor="#2E84DA"
+        android:endColor="#530F44"/>
+</shape>

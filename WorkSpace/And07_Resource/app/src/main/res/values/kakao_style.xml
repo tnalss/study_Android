@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="friend_list_style">
+
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+
+    <style name="friend_list_style2" parent="friend_list_style">
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+
+    <style name="status_style">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="status_style2" parent="status_style">
+        <item name="android:textSize">10dp</item>
+    </style>
+    <style name="profile_style">
+        <item name="android:layout_width">45dp</item>
+        <item name="android:layout_height">45dp</item>
+    </style>
+
+
+
+</resources>

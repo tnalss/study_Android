@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/myProfile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="50dp">
+            <ImageView
+
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/unknown1" />
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/myName"
+                style="@style/friend_list_style"
+                android:layout_toRightOf="@+id/myProfile"
+                android:text="수민" />
+
+            <TextView
+                style="@style/status_style"
+                android:layout_below="@+id/myName"
+                android:layout_toRightOf="@id/myProfile"
+                android:text="상태 메시지" />
+
+
+        </RelativeLayout>
+        <View
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:background="#373A39"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="친구 498"
+            android:textColor="#8F959C" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/friend1"
+                style="@style/profile_style"
+                android:src="@drawable/unknown2" />
+
+            <TextView
+                android:id="@+id/friendName1"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend1"
+                android:text="김민호" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName1"
+                android:layout_toRightOf="@+id/friend1"
+                android:text="인생이란 무엇일까" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend2"
+                style="@style/profile_style"
+                android:src="@drawable/unknown2" />
+            <TextView
+                android:id="@+id/friendName2"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend2"
+                android:text="박지연" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName2"
+                android:layout_toRightOf="@+id/friend2"
+                android:text="배고프다" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend3"
+                style="@style/profile_style"
+                android:src="@drawable/unknown2" />
+            <TextView
+                android:id="@+id/friendName3"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend3"
+                android:text="말똥이" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName3"
+                android:layout_toRightOf="@+id/friend3"
+                android:text="나도 배고프다" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend4"
+                style="@style/profile_style"
+                android:src="@drawable/unknown2" />
+            <TextView
+                android:id="@+id/friendName4"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend4"
+                android:text="개똥이" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName4"
+                android:layout_toRightOf="@+id/friend4"
+                android:text="나도 배고프다" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend5"
+                style="@style/profile_style"
+                android:src="@drawable/unknown2" />
+            <TextView
+                android:id="@+id/friendName5"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend5"
+                android:text="소똥이" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName5"
+                android:layout_toRightOf="@+id/friend5"
+                android:text="나도 ...." />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend6"
+                style="@style/profile_style"
+                android:src="@drawable/unknown2" />
+            <TextView
+                android:id="@+id/friendName6"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend6"
+                android:text="냥똥이" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName6"
+                android:layout_toRightOf="@+id/friend6"
+                android:text="나도 배고프다" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend7"
+                style="@style/profile_style"
+                android:src="@drawable/unknown2" />
+            <TextView
+                android:id="@+id/friendName7"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend7"
+                android:text="쥐똥이" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName7"
+                android:layout_toRightOf="@+id/friend7"
+                android:text="나도 배고프다" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend8"
+                style="@style/profile_style"
+                android:src="@drawable/unknown2" />
+            <TextView
+                android:id="@+id/friendName8"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend8"
+                android:text="뱀똥이" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName8"
+                android:layout_toRightOf="@+id/friend8"
+                android:text="나도 배고프다" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend9"
+                style="@style/profile_style"
+                android:src="@drawable/unknown2" />
+            <TextView
+                android:id="@+id/friendName9"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend9"
+                android:text="개똥이" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName9"
+                android:layout_toRightOf="@+id/friend9"
+                android:text="나도 배고프다" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend10"
+                style="@style/profile_style"
+                android:src="@drawable/unknown1" />
+            <TextView
+                android:id="@+id/friendName10"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend10"
+                android:text="헝그리" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName10"
+                android:layout_toRightOf="@+id/friend10"
+                android:text="암쏘 헝그리맨" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend11"
+                style="@style/profile_style"
+                android:src="@drawable/unknown1" />
+            <TextView
+                android:id="@+id/friendName11"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend11"
+                android:text="헝그리" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName11"
+                android:layout_toRightOf="@+id/friend11"
+                android:text="암쏘 헝그리맨" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend12"
+                style="@style/profile_style"
+                android:src="@drawable/unknown1" />
+            <TextView
+                android:id="@+id/friendName12"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend12"
+                android:text="마당발" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName12"
+                android:layout_toRightOf="@+id/friend12"
+                android:text="친구가 드럽게 많네" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend13"
+                style="@style/profile_style"
+                android:src="@drawable/unknown1" />
+            <TextView
+                android:id="@+id/friendName13"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend13"
+                android:text="후회중" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName13"
+                android:layout_toRightOf="@+id/friend13"
+                android:text="크게 만들껄" />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/friend14"
+                style="@style/profile_style"
+                android:src="@drawable/unknown1" />
+            <TextView
+                android:id="@+id/friendName14"
+                style="@style/friend_list_style2"
+                android:layout_toRightOf="@+id/friend14"
+                android:text="노안" />
+            <TextView
+                style="@style/status_style2"
+                android:layout_below="@+id/friendName14"
+                android:layout_toRightOf="@+id/friend14"
+                android:text="돋보기 써야 친구 확인 가능" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</ScrollView>
