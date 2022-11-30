@@ -1,5 +1,6 @@
 package com.example.test01_listview;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,7 +42,8 @@ public class SubAdapter extends BaseAdapter {
         TextView tv_title = convertView.findViewById(R.id.tv_title);
         TextView tv_content = convertView.findViewById(R.id.tv_content);
 
-        iv_thumnail.setImageResource(R.drawable.img1);
+        //https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=sohyoun74&logNo=90179026875
+        iv_thumnail.setImageResource( convertView.getResources().getIdentifier(list.get(position).getIv_thumnail(),"drawable",convertView.getContext().getPackageName()));
         tv_title.setText(list.get(position).getTitle());
         tv_content.setText(list.get(position).getContent());
 

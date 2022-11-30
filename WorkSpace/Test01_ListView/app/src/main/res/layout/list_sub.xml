@@ -7,17 +7,19 @@
     <ImageView
         android:scaleType="fitXY"
         android:id="@+id/iv_thumnail"
-        android:src="@drawable/img1"
+        android:src="@drawable/ic_launcher_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
+        android:textSize="20dp"
         android:id="@+id/tv_title"
         android:text="News"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <TextView
+        android:textSize="18dp"
         android:id="@+id/tv_content"
-        android:text="askdf;nasfnklasdfnlasdf"
+        android:text="lorem ipsum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
