@@ -21,7 +21,6 @@ public class SubActivity extends AppCompatActivity {
         String resNum="";
         for (int i = 1 ; i <= 10 ; i++) {
             resNum="img"+i;
-            int drewableResId = this.getResources().getIdentifier(resNum,"drawable",this.getPackageName());
             list.add(new ListDTO(resNum, "제목" + i, "내용" + i));
         }
 
