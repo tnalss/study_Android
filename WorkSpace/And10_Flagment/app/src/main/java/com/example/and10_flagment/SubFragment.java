@@ -13,7 +13,6 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-
 public class SubFragment extends Fragment {
 
     Button btn_sub;
@@ -27,7 +26,6 @@ public class SubFragment extends Fragment {
         btn_sub=v.findViewById(R.id.btn_sub);
         iv_image = v.findViewById(R.id.iv_image);
         iv_image2 = v.findViewById(R.id.iv_image2);
-
 
         btn_sub.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
                 // 트랜잭션?? : 이란게 일어나면 그 후 반드시 해줘야하는 것???
                 // rollback,commit을 해줘야함!!!!
                 getSupportFragmentManager().beginTransaction().replace(R.id.container,new MainFragment()).commit();
+
             }
         });
 
