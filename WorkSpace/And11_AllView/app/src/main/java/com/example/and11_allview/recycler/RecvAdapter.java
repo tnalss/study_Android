@@ -1,6 +1,5 @@
 package com.example.and11_allview.recycler;
 
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,9 +65,12 @@ public class RecvAdapter extends RecyclerView.Adapter<RecvAdapter.CSMViewHolder>
     public int getItemCount() {
         return 30;
     }
-    // 일반클래스가 아니라 viewholder타입임.
+
+
+
+    // 일반클래스가 아니라 viewholder타입
     // 1. androidx 에 있는 recyclerView홀더를 상속받음
-    // ViewHolder타입을 상속받음 innerClass ViewHolder를 만든다. ( 이름은 관례상 ViewHolder)
+    // ViewHolder타입을 상속받음 ""InnerClass"" ViewHolder를 만든다. ( 이름은 관례상 ViewHolder)
 
     public class CSMViewHolder extends RecyclerView.ViewHolder {
         ImageView imgv1, imgv2;

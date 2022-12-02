@@ -55,7 +55,9 @@
             android:layout_height="wrap_content"/>
     </LinearLayout>
 
-    <ImageView
+    <ImageButton
+        android:id="@+id/btn_play"
+        android:background="#fff"
         android:layout_gravity="center"
         android:padding="10dp"
         android:layout_width="wrap_content"
