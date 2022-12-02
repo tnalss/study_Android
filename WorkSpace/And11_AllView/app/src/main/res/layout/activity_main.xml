@@ -39,6 +39,12 @@
         android:id="@+id/btn_recycler"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/btn_recycler_self"
+        android:text="리사이클러뷰 직접구현"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_weight="1"
