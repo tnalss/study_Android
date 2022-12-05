@@ -15,9 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
     ActionBar actionBar;
     BottomNavigationView btm_nav;
-    Fragment fragment;
 
-    @Override
+      @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
