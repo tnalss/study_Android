@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+<RelativeLayout
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:padding="10dp"
+        android:id="@+id/imgv_recv_profile"
+        android:src="@drawable/profile_img1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"/>
+    <TextView
+        android:id="@+id/tv_recv_name"
+        android:padding="10dp"
+        android:textSize="20dp"
+        android:layout_toRightOf="@+id/imgv_recv_profile"
+        android:text="친구1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_marginLeft="80dp"
+        android:layout_below="@+id/tv_recv_name"
+        android:text="안녕!!!!!!!!"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
+
+    <RelativeLayout
+        android:layout_gravity="right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:background="#FFEB3B"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="20dp"
+            android:padding="10dp"
+            android:layout_alignParentRight="true"
+            android:text="나도 반가워"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.project01_clone.R;
+import com.example.project01_clone.chat.ChatActivity;
 
 public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -18,7 +19,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         TextView tv_detail_name,tv_detail_message;
 
         LinearLayout ll_detail_chat, ll_call, ll_detail_facetalk;
-
+    FriendDTO dto;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,7 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         tv_detail_message = findViewById(R.id.tv_detail_message);
 
         Intent intent = getIntent();
-        FriendDTO dto = (FriendDTO) intent.getSerializableExtra("dto");
+        dto = (FriendDTO) intent.getSerializableExtra("dto");
         imgv_detail_profile.setImageResource(dto.getImgRes());
         tv_detail_name.setText(dto.getName());
         tv_detail_message.setText(dto.getMsg());
@@ -60,7 +61,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         //ex) 인터넷연결, 전화연결, 카메라, 갤러리,맵등...
         Intent intent=null;
         if (v.getId()==R.id.ll_detail_chat){
-            intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://m.naver.com"));
+            intent = new Intent(DetailActivity.this, ChatActivity.class);
+            intent.putExtra("dto",dto);
         }else if (v.getId() == R.id.ll_call){
             intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:01023004390"));
 
