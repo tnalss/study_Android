@@ -39,12 +39,61 @@
     </LinearLayout>
 
     <!--top nav can swipe-->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recv_topmenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <ImageView
+
+            android:layout_alignParentRight="true"
+            android:src="@drawable/dropdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 
 
-    </LinearLayout>
+    </RelativeLayout>
+
+    <!--content-->
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp">
+        <!-- ScrollView nae bu nuen hana-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Carousel banner-->
+
+            <!-- dropdown search ranking-->
+
+            <!-- 2line menus-->
+
+            <!--small banner-->
+
+            <!--live shopping-->
+
+            <!--many items-->
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!--Bottom menu-->
+<com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/btm_menu"
+    android:layout_width="match_parent"
+    android:layout_height="50dp">
+
+
+</com.google.android.material.bottomnavigation.BottomNavigationView>
+
 
 </LinearLayout>
