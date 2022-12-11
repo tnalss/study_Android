@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/btm_item1"
+        android:icon="@drawable/ic_home"
+        android:enabled="true"
+        android:title="메인"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/btm_item2"
+        android:icon="@drawable/ic_money"
+        android:enabled="true"
+        android:title="메가선불카드"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/btm_item3"
+        android:icon="@drawable/ic_cup"
+        android:enabled="true"
+        android:title="메가오더"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/btm_item4"
+        android:icon="@drawable/ic_present"
+        android:enabled="true"
+        android:title="선물하기"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/btm_item5"
+        android:icon="@drawable/ic_burger"
+        android:enabled="true"
+        android:title="더보기"
+        app:showAsAction="ifRoom"/>
+</menu>
