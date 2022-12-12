@@ -56,8 +56,6 @@ public class MainFragment extends Fragment {
         imgSlider.setClipToOutline(true); // 레이아웃에 낑겨줌
         imgSlider.setOffscreenPageLimit(1);
         imgSlider.setAdapter(new SliderAdapter(inflater,getContext(),images));
-    //imgSlider.setCurrentItem(2);
-
 
         final Handler handler = new Handler();
         final Runnable Update = new Runnable() {
