@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,8 +18,11 @@ import com.bumptech.glide.Glide;
 import com.example.a13_clone_mgc.R;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainFragment extends Fragment {
+        int cnt=0;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -27,6 +31,7 @@ public class MainFragment extends Fragment {
         ViewPager2 imgSlider;
         RecyclerView recv_suggest;
         TextView tv_slider_indicator;
+        Timer timer;
 
         ArrayList<Integer> images = new ArrayList<>();
         images.add(R.drawable.carousel1);
@@ -51,6 +56,33 @@ public class MainFragment extends Fragment {
         imgSlider.setClipToOutline(true); // 레이아웃에 낑겨줌
         imgSlider.setOffscreenPageLimit(1);
         imgSlider.setAdapter(new SliderAdapter(inflater,getContext(),images));
+    //imgSlider.setCurrentItem(2);
+
+
+        final Handler handler = new Handler();
+        final Runnable Update = new Runnable() {
+            @Override
+            public void run() {
+                if(cnt == suggestions.size()) {
+                    cnt = 0;
+                }
+                imgSlider.setCurrentItem(cnt++, true);
+            }
+        };
+
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(Update);
+            }
+        }, 300, 2000);
+
+
+
+
+
+
 
         imgSlider.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
