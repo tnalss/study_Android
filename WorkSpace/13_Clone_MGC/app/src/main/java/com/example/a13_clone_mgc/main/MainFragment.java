@@ -29,7 +29,7 @@ public class MainFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
         ImageView iv_main_banner;
         ViewPager2 imgSlider;
-        RecyclerView recv_suggest;
+        RecyclerView recv_suggest,recv_notice;
         TextView tv_slider_indicator;
         Timer timer;
 
@@ -50,6 +50,8 @@ public class MainFragment extends Fragment {
         iv_main_banner = v.findViewById(R.id.iv_main_banner);
         imgSlider = v.findViewById(R.id.imgSlider);
         recv_suggest = v.findViewById(R.id.recv_suggest);
+        recv_notice = v.findViewById(R.id.recv_notice);
+
         tv_slider_indicator = v.findViewById(R.id.tv_slider_indicator);
 
         Glide.with(v.getContext()).load(R.drawable.mainbanner).into(iv_main_banner);
@@ -91,6 +93,9 @@ public class MainFragment extends Fragment {
         });
         recv_suggest.setAdapter(new SuggestAdapter(inflater,getContext(),suggestions));
         recv_suggest.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
+
+        recv_notice.setAdapter(new NoticeAdapter(inflater,getContext()));
+        recv_notice.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
         return v;
     }
 }
