@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.a13_clone_mgc.R;
@@ -25,6 +26,7 @@ public class MainFragment extends Fragment {
         ImageView iv_main_banner;
         ViewPager2 imgSlider;
         RecyclerView recv_suggest;
+        TextView tv_slider_indicator;
 
         ArrayList<Integer> images = new ArrayList<>();
         images.add(R.drawable.carousel1);
@@ -43,11 +45,20 @@ public class MainFragment extends Fragment {
         iv_main_banner = v.findViewById(R.id.iv_main_banner);
         imgSlider = v.findViewById(R.id.imgSlider);
         recv_suggest = v.findViewById(R.id.recv_suggest);
+        tv_slider_indicator = v.findViewById(R.id.tv_slider_indicator);
+
         Glide.with(v.getContext()).load(R.drawable.mainbanner).into(iv_main_banner);
         imgSlider.setClipToOutline(true); // 레이아웃에 낑겨줌
         imgSlider.setOffscreenPageLimit(1);
         imgSlider.setAdapter(new SliderAdapter(inflater,getContext(),images));
 
+        imgSlider.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                tv_slider_indicator.setText(position+1+ "/"+suggestions.size());
+            }
+        });
         recv_suggest.setAdapter(new SuggestAdapter(inflater,getContext(),suggestions));
         recv_suggest.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
         return v;

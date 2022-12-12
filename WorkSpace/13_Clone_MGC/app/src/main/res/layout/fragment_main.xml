@@ -85,15 +85,31 @@
     </LinearLayout>
 
     <!--carousel-->
-    <androidx.viewpager2.widget.ViewPager2
-        android:layout_margin="10dp"
-        android:id="@+id/imgSlider"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/rounded_edge_white"
-        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_margin="10dp"
+                android:id="@+id/imgSlider"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/rounded_edge_white"
+                />
 
-
+            <TextView
+                android:id="@+id/tv_slider_indicator"
+                android:background="@drawable/rounded_edge_black"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="220dp"
+                android:layout_marginRight="30dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:textColor="@color/white"
+                android:text="1/5"
+                android:textSize="18dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
     <!--추천 메뉴 가로 리사이클러 인디케이터 추가 필요-->
         <TextView
             android:text="최수민 님을 위한 추천 메뉴"
