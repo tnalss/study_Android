@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import java.util.HashMap;
+import com.example.middle_retrofit.databinding.ActivityMainBinding;
+import com.google.gson.Gson;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -13,27 +14,29 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
+    ActivityMainBinding binding; // 위젯을 하나씩 find안해도 하나로 묶어놓음
+final String TAG="로그";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        //바인딩 한번에 가능.
 
-
-
-        ApiInterface apiInterface = new ApiClient().getApiClient().create(ApiInterface.class);
-        HashMap<String, Object> params = new HashMap<>();
-
-        params.put("id","admin");
-        Call<String> apiTest = apiInterface.getData("andTest",params);
-        apiTest.enqueue(new Callback<String>() {
+        binding.tv.setText("애도 안되는데?");
+        CommonMethod cm = new CommonMethod();
+        cm.setParams("data","얄루");
+        cm.getData("andVo", new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
-                Log.d("로그", "onResponse: "+ response.body());
+                binding.tv.setText("뭐꼬"); //애 왜 안됨????????
+                Log.d(TAG, "onResponse: "+response.body());
+                CustomerVO vo = new Gson().fromJson(response.body(),CustomerVO.class);
             }
 
             @Override
             public void onFailure(Call<String> call, Throwable t) {
-                Log.d("로그", "onResponse: ");
 
             }
         });
