@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".card.CardFragment"
+    android:orientation="vertical">
+
+    <!--최상단 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:padding="10dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:text="메가선불카드"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:padding="10dp"
+
+            android:layout_toLeftOf="@+id/iv_settings"
+            android:src="@drawable/ic_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/iv_settings"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+
+
+    </RelativeLayout>
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--카드 부분-->
+    <RelativeLayout
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:background="@drawable/rounded_edge_dot">
+
+        <ImageView
+            android:layout_marginTop="70dp"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_add"
+            android:id="@+id/iv_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/iv_add"
+            android:text="카드 추가"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+    <!-- 유의사항 -->
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:id="@+id/ln_careful"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="유의사항"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+            android:id="@+id/iv_careful_up"
+            android:src="@drawable/ic_arrow_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:visibility="gone"
+            android:id="@+id/iv_careful_down"
+            android:src="@drawable/ic_arrow_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/ln_careful_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:text="1. 신규 메가선불카드는 모바일에서만 구입이 가능합니다."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+        <TextView
+        android:text="2. 구입하신 메가선불카드의 충전은 모바일앱에서 가능합니다."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. 메가선불카드로 결제 시 일부 메뉴는 적립이 불가능할 수 있습니다."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. 해당 카드는 매장에서 현금으로 교환되지 않으며, 별도로 거래될 수 없습니다."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1회 최대 100,000원까지 충전이 가능합니다."
+            />
+
+    </LinearLayout>
+
+    <!-- 잔액환불규정 -->
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:id="@+id/ln_refund"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="잔액환불규정"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <FrameLayout
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/iv_refund_up"
+                android:src="@drawable/ic_arrow_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/iv_refund_down"
+                android:src="@drawable/ic_arrow_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:id="@+id/ln_refund_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:text="1. 메가선불카드는 60% 이상 사용시 환불 신청이 가능합니다."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="2. 최초 유효기간은 결제 후 일주일입니다."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. 최초 유효기간 이내에는 미사용시 환불신청금액의 100% 환불이 가능합니다."/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4. 구매일로부터 5년 이내 사용 후 남은 잔액에 한하여 환불신청이 가능합니다."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5. 매장에서는 잔액 환불이 불가합니다. 환불 관련 문의는 고객센터 1:1 문의남기기 혹은 카카오톡채널(ID:발투르스트)로 문의해주세요. (운영시간 평일 10:00~17:00 , 점심시간 12:00~13:00 / 주말 및 공휴일 휴무)"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
+</ScrollView>
+
+</LinearLayout>

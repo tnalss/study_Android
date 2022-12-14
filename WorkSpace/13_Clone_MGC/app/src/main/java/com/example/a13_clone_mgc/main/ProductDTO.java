@@ -2,11 +2,11 @@ package com.example.a13_clone_mgc.main;
 
 import java.io.Serializable;
 
-public class BeverageDTO implements Serializable {
+public class ProductDTO implements Serializable {
     private int imageSrc;
     private String name,desc;
 
-    public BeverageDTO(int imageSrc, String name, String desc) {
+    public ProductDTO(int imageSrc, String name, String desc) {
         this.imageSrc = imageSrc;
         this.name = name;
         this.desc = desc;

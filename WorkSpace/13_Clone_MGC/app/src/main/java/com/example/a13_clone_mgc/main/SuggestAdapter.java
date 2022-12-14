@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,9 +20,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHolder>{
     private LayoutInflater inflater;
     private Context context;
-    private ArrayList<BeverageDTO> list;
+    private ArrayList<ProductDTO> list;
 
-    public SuggestAdapter(LayoutInflater inflater, Context context, ArrayList<BeverageDTO> list) {
+    public SuggestAdapter(LayoutInflater inflater, Context context, ArrayList<ProductDTO> list) {
         this.inflater = inflater;
         this.context = context;
         this.list = list;
