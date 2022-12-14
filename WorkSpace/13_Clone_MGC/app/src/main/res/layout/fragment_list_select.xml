@@ -7,7 +7,7 @@
     android:orientation="vertical">
 
     <LinearLayout
-        
+
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,10 +16,22 @@
         android:text="내 주변에 "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
         <TextView
+            android:id="@+id/tv_howmany"
         android:text="6개의 매장"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+            <View
+                android:layout_below="@id/tv_howmany"
+                android:layout_width="60dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="-10dp"
+                android:background="#80FFEB3B"
+                />
+        </RelativeLayout>
         <TextView
         android:text="이 있습니다."
         android:layout_width="wrap_content"
