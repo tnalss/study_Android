@@ -9,6 +9,7 @@ import android.view.MenuItem;
 
 import com.example.a13_clone_mgc.card.CardFragment;
 import com.example.a13_clone_mgc.main.MainFragment;
+import com.example.a13_clone_mgc.order.OrderFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

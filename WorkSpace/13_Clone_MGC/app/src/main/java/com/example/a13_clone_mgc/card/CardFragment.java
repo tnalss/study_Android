@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.a13_clone_mgc.R;
-import com.ramotion.foldingcell.FoldingCell;
 
 public class CardFragment extends Fragment {
     LinearLayout ln_careful,ln_careful_detail, ln_refund,ln_refund_detail;

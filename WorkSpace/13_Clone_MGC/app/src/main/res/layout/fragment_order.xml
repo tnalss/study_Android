@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderFragment"
+    tools:context=".order.OrderFragment"
     android:orientation="vertical">
 
     <!--최상단 카드부분과 같은 양식임-->
@@ -27,7 +27,7 @@
             android:padding="10dp"
             android:id="@+id/iv_search"
             android:layout_alignParentRight="true"
-            android:src="@drawable/ic_settings"
+            android:src="@drawable/ic_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
@@ -41,10 +41,37 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tb_order"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content">
+            <com.google.android.material.tabs.TabItem
+                android:text="리스트로 선택"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.tabs.TabItem
+                android:text="지도로 선택"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.tabs.TabItem
+                android:text="즐겨찾기"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.tabs.TabLayout>
+
+            <!--탭뷰 붙을 부분-->
+            <FrameLayout
+                android:id="@+id/fm_tab"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
 
 
-
-
+        </LinearLayout>
     </ScrollView>
 
 

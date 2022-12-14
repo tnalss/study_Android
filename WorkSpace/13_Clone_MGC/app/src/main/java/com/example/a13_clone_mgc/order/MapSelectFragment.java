@@ -1,4 +1,4 @@
-package com.example.a13_clone_mgc;
+package com.example.a13_clone_mgc.order;
 
 import android.os.Bundle;
 
@@ -8,14 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class OrderFragment extends Fragment {
+import com.example.a13_clone_mgc.R;
+
+public class MapSelectFragment extends Fragment {
 
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_order, container, false);
+        View v = inflater.inflate(R.layout.fragment_map_select, container, false);
+
 
 
 
