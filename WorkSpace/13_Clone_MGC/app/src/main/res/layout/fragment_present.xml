@@ -1,14 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".present.PresentFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".present.PresentFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <!--최상단 -->
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_report"
+            android:padding="10dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ic_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_report"
+            android:text="예전선물함"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textStyle="bold"
+            android:padding="10dp"
+            android:textSize="20dp"
+            android:text="선물하기"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+            android:padding="10dp"
+            android:id="@+id/iv_cart"
+            android:src="@drawable/ic_cart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_edge_red"
+                android:layout_marginLeft="22dp"
+                android:textSize="11sp"
+                android:text="13"
+                android:layout_width="18dp"
+                android:layout_height="15dp"/>
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <!--탭뷰-->
+    <com.google.android.material.tabs.TabLayout
+        app:tabTextAppearance="@style/tabTextSize"
+        app:tabTextColor="@color/black"
+        app:tabSelectedTextColor="@color/black"
+        app:tabIndicatorColor="@color/black"
+        app:tabRippleColor="@android:color/transparent"
+        android:id="@+id/tb_present"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+        <com.google.android.material.tabs.TabItem
+            android:text="메인"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="카테고리"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="선물함"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <!--탭뷰 붙을 부분-->
+    <FrameLayout
+        android:id="@+id/fm_tab"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+
+</LinearLayout>
