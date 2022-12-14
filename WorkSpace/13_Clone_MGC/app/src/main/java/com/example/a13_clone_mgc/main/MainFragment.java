@@ -1,5 +1,9 @@
 package com.example.a13_clone_mgc.main;
 
+import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
+import android.util.Base64;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +23,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.a13_clone_mgc.R;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -45,6 +53,13 @@ public class MainFragment extends Fragment {
         suggestions.add(new ProductDTO( R.drawable.suggest3,"태극전사레드불에너지","우리나라 국기의 태극 문양을 표현한 트로피컬 맛의 에너지 드링크 (With Red Bull Sugarfree)"));
         suggestions.add(new ProductDTO( R.drawable.suggest4,"붉은악마레드불에너지","월드컵의 상징 붉은악마를 표현한 새콤달콤한 체리콕 맛의 에너지 드링크 (With Red Bull Sugarfree)"));
         suggestions.add(new ProductDTO( R.drawable.suggest5,"(HOT)레드오렌지뱅쇼티플레저","안토시아닌이 풍부하게 들어간 레드오렌지 뱅쇼베이스에 와인 티백을 활용한 티플레져"));
+
+
+
+
+
+
+
 
 
         iv_main_banner = v.findViewById(R.id.iv_main_banner);
@@ -78,12 +93,6 @@ public class MainFragment extends Fragment {
             }
         }, 300, 2000);
 
-
-
-
-
-
-
         imgSlider.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
@@ -98,4 +107,6 @@ public class MainFragment extends Fragment {
         recv_notice.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
         return v;
     }
+
+
 }

@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import com.example.a13_clone_mgc.R;
 import com.google.android.material.tabs.TabLayout;
 
+import net.daum.mf.map.api.MapView;
+
 public class OrderFragment extends Fragment {
 
     TabLayout tb_order;

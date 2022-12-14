@@ -10,6 +10,8 @@ import android.view.ViewGroup;
 
 import com.example.a13_clone_mgc.R;
 
+import net.daum.mf.map.api.MapView;
+
 public class MapSelectFragment extends Fragment {
 
 
@@ -19,8 +21,9 @@ public class MapSelectFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_map_select, container, false);
 
-
-
+        MapView mapView = new MapView(getContext());
+        ViewGroup mapViewContainer = (ViewGroup) v.findViewById(R.id.mapView);
+        mapViewContainer.addView(mapView);
 
         return v;
     }
