@@ -206,9 +206,11 @@
             android:text="4. 구매일로부터 5년 이내 사용 후 남은 잔액에 한하여 환불신청이 가능합니다."/>
 
         <TextView
+            android:id="@+id/tv_refund_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="5. 매장에서는 잔액 환불이 불가합니다. 환불 관련 문의는 고객센터 1:1 문의남기기 혹은 카카오톡채널(ID:발투르스트)로 문의해주세요. (운영시간 평일 10:00~17:00 , 점심시간 12:00~13:00 / 주말 및 공휴일 휴무)"
+            android:bufferType="spannable"
             />
 
     </LinearLayout>

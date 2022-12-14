@@ -1,20 +1,27 @@
 package com.example.a13_clone_mgc.card;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.a13_clone_mgc.R;
 
 public class CardFragment extends Fragment {
     LinearLayout ln_careful,ln_careful_detail, ln_refund,ln_refund_detail;
     ImageView iv_careful_up,iv_careful_down,iv_refund_up,iv_refund_down;
+    TextView tv_refund_detail;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -29,6 +36,8 @@ public class CardFragment extends Fragment {
         iv_careful_down = v.findViewById(R.id.iv_careful_down);
         iv_refund_up = v.findViewById(R.id.iv_refund_up);
         iv_refund_down = v.findViewById(R.id.iv_refund_down);
+
+        tv_refund_detail = v.findViewById(R.id.tv_refund_detail);
 
         ln_careful.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,6 +71,14 @@ public class CardFragment extends Fragment {
             }
         });
 
+        SpannableStringBuilder sp = new SpannableStringBuilder("5. 매장에서는 잔액 환불이 불가합니다. 환불 관련 문의는 고객센터 1:1 문의남기기 혹은 카카오톡채널(ID:발투르스트)로 문의해주세요. (운영시간 평일 10:00~17:00 , 점심시간 12:00~13:00 / 주말 및 공휴일 휴무)");
+        sp.setSpan(new UnderlineSpan(),33,47, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        sp.setSpan(new ForegroundColorSpan(Color.BLUE),33,47, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        sp.setSpan(new UnderlineSpan(),51,71, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        sp.setSpan(new ForegroundColorSpan(Color.BLUE),51,71, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        sp.setSpan(new ForegroundColorSpan(Color.RED),85,116, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+
+        tv_refund_detail.setText(sp);
 
         return v;
     }
