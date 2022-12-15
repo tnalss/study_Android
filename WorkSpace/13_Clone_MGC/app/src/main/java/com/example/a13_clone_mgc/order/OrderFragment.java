@@ -29,12 +29,11 @@ public class OrderFragment extends Fragment {
         tb_order.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if(tab.getPosition() == 0 ){
+                if( tab.getPosition() == 0 ){
                     getChildFragmentManager().beginTransaction().replace(R.id.fm_tab,new ListSelectFragment()).commit();
-                } else if ( tab.getPosition() == 1){
+                } else if ( tab.getPosition() == 1 ){
                     getChildFragmentManager().beginTransaction().replace(R.id.fm_tab,new MapSelectFragment()).commit();
-
-                } else if ( tab.getPosition() ==2 ){
+                } else if ( tab.getPosition() == 2 ){
                     getChildFragmentManager().beginTransaction().replace(R.id.fm_tab,new FavoriteFragment() ).commit();
 
                 }
