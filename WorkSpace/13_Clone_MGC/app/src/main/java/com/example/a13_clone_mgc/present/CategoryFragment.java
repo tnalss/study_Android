@@ -3,6 +3,8 @@ package com.example.a13_clone_mgc.present;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +22,21 @@ public class CategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_category, container, false);
         TabLayout tb_category;
+        RecyclerView recv_present_tab;
         tb_category = v.findViewById(R.id.tb_category);
+        recv_present_tab = v.findViewById(R.id.recv_present_tab);
+
+
+        recv_present_tab.setAdapter(new VerticalAdapter(inflater,getContext()));
+        recv_present_tab.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
 
         tb_category.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if( tab.getPosition() == 0  ){
+                        recv_present_tab.setAdapter(new VerticalAdapter(inflater,getContext()));
+                        recv_present_tab.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
+
 
                 } else if( tab.getPosition() == 1 ) {
 

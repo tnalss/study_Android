@@ -1,16 +1,30 @@
 package com.example.a13_clone_mgc.present;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.a13_clone_mgc.R;
+
 public class VerticalAdapter extends RecyclerView.Adapter<VerticalAdapter.ViewHolder> {
+    LayoutInflater inflater;
+    Context context;
+
+    public VerticalAdapter(LayoutInflater inflater, Context context ) {
+        this.inflater = inflater;
+        this.context = context;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        View v = inflater.inflate(R.layout.item_recv_vertical,parent,false);
+
+        return new ViewHolder(v);
     }
 
     @Override
@@ -20,7 +34,7 @@ public class VerticalAdapter extends RecyclerView.Adapter<VerticalAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 20;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
