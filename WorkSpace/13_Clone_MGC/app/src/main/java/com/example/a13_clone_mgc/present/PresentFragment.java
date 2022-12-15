@@ -29,15 +29,13 @@ public class PresentFragment extends Fragment {
         tb_present.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                if ( tab.getPosition() ==0 ){
+                if ( tab.getPosition() == 0 ){
                     getChildFragmentManager().beginTransaction().replace(R.id.fm_tab,new PresentMainFragment()).commit();
-                } else if (tab.getPosition() ==1) {
-
-                } else if ( tab.getPosition() ==2 ){
-
+                } else if (tab.getPosition() == 1) {
+                    getChildFragmentManager().beginTransaction().replace(R.id.fm_tab,new CategoryFragment()).commit();
+                } else if ( tab.getPosition() == 2 ){
+                    getChildFragmentManager().beginTransaction().replace(R.id.fm_tab,new PresentBoxFragment()).commit();
                 }
-
-
             }
 
             @Override

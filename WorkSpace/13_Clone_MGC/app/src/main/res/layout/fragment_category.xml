@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".present.CategoryFragment"
+    android:orientation="vertical">
+
+    <com.google.android.material.tabs.TabLayout
+        style="@style/ChipTabLayout"
+        android:id="@+id/tb_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <com.google.android.material.tabs.TabItem
+            android:text="SET MENU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="NEW&amp;BEST"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="커피"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="디카페인"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="스무디&amp;프라페"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="에이드&amp;주스"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="음료"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="티(TEA)"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="에스프레소"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="디저트"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="MD상품"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.tabs.TabItem
+            android:text="금액권"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.tabs.TabLayout>
+
+
+</LinearLayout>

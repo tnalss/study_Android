@@ -3,4 +3,33 @@
     <style name="tabTextSize" parent="TextAppearance.Design.Tab">
         <item name="android:textSize">16sp</item>
     </style>
+
+
+    <style name="more_list_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="more_info_title">
+        <item name="android:padding">3dp</item>
+        <item name="android:textColor">#878787</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+
+    <style name="ChipTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">@android:color/transparent</item>
+        <item name="tabBackground">@drawable/selector_tab</item>
+        <item name="tabSelectedTextColor">?android:textColorPrimary</item>
+    </style>
+
+
 </resources>

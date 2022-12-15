@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.example.a13_clone_mgc.card.CardFragment;
 import com.example.a13_clone_mgc.main.MainFragment;
+import com.example.a13_clone_mgc.more.MoreFragment;
 import com.example.a13_clone_mgc.order.OrderFragment;
 import com.example.a13_clone_mgc.present.PresentFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -65,13 +66,14 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if(item.getItemId() == R.id.btm_item1){
                     changeFragment(new MainFragment());
-
                 } else if (item.getItemId() == R.id.btm_item2){
                     changeFragment(new CardFragment());
                 } else if (item.getItemId() == R.id.btm_item3){
                     changeFragment(new OrderFragment());
                 } else if (item.getItemId() == R.id.btm_item4){
                     changeFragment(new PresentFragment());
+                } else if (item.getItemId() == R.id.btm_item5){
+                    changeFragment(new MoreFragment());
                 }
 
                 return true;
