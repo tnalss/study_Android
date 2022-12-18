@@ -29,6 +29,7 @@ public class PresentBoxFragment extends Fragment {
                 if( tab.getPosition() == 0 ){
                     getChildFragmentManager().beginTransaction().replace(R.id.fl_receive,new ReceivePresentFragment()).commit();
                 } else if (tab.getPosition() ==1 ){
+                    getChildFragmentManager().beginTransaction().replace(R.id.fl_receive,new SendPresentFragment()).commit();
 
                 }
             }

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.example.a13_clone_mgc.card.CardFragment;
 import com.example.a13_clone_mgc.main.MainFragment;
@@ -26,7 +27,7 @@ import java.security.NoSuchAlgorithmException;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView btm_nav;
     final String TAG="tag";
-
+    double waitTime=0;
     /*해시키 구하는 메소드 for 카카오맵*/
     private void getHashKey(){
         PackageInfo packageInfo = null;
@@ -85,4 +86,13 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
     }
 
+    @Override
+    public void onBackPressed() {
+        if(System.currentTimeMillis() - waitTime >=1500 ) {
+            waitTime = System.currentTimeMillis();
+
+        } else {
+            super.onBackPressed(); // 액티비티 종료
+        }
+    }
 }
