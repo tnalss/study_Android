@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -19,6 +20,7 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ViewHolder
     private Context context;
     private ArrayList<Integer> images;
 
+
     public SliderAdapter(LayoutInflater inflater, Context context, ArrayList<Integer> images) {
         this.inflater = inflater;
         this.context = context;
@@ -29,12 +31,22 @@ public class SliderAdapter extends RecyclerView.Adapter<SliderAdapter.ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = inflater.inflate(R.layout.item_imgslider,parent,false);
+
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Glide.with(context).load(images.get(position)).into(holder.iv_slider);
+        final int cnt = position;
+        holder.iv_slider.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(images.get(cnt)==0){
+                    Toast.makeText(context, "11", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     @Override

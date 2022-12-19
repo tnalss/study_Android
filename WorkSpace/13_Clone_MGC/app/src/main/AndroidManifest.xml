@@ -2,15 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.a13_clone_mgc">
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:usesCleartextTraffic="true"
-
-
-
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -19,7 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.13_Clone_MGC"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".EventActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -28,6 +33,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -35,16 +41,13 @@
         <activity
             android:name=".MainActivity"
             android:exported="false">
-
-
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
-        </activity>
-
-    <!--<meta-data android:name="com.kakao.sdk.AppKey" android:value="1JD158uA3VQVnyOfk+aOcG8TNwk="/>-->
-    <meta-data android:name="com.kakao.sdk.AppKey" android:value="f2ddf57653adf7ca15b85a4d5a418efa"/>
-
+        </activity> <!-- <meta-data android:name="com.kakao.sdk.AppKey" android:value="1JD158uA3VQVnyOfk+aOcG8TNwk="/> -->
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="f2ddf57653adf7ca15b85a4d5a418efa" />
     </application>
 
 </manifest>
