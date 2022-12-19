@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
+
 
 import com.example.a13_clone_mgc.R;
 import com.google.android.material.tabs.TabLayout;
@@ -36,7 +36,6 @@ public class CategoryFragment extends Fragment {
                 if( tab.getPosition() == 0  ){
                         recv_present_tab.setAdapter(new VerticalAdapter(inflater,getContext()));
                         recv_present_tab.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.VERTICAL,false));
-
 
                 } else if( tab.getPosition() == 1 ) {
 

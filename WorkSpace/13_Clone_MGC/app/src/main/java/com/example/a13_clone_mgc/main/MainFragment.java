@@ -1,9 +1,11 @@
 package com.example.a13_clone_mgc.main;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -18,7 +20,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.a13_clone_mgc.R;
@@ -29,17 +33,18 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainFragment extends Fragment {
+public class MainFragment extends Fragment implements View.OnClickListener {
         int cnt=0;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_main, container, false);
-        ImageView iv_main_banner;
+        ImageView iv_main_banner,iv_shopping;
         ViewPager2 imgSlider;
         RecyclerView recv_suggest,recv_notice;
         TextView tv_slider_indicator;
         Timer timer;
+        LinearLayout ln_coupon,ln_stamp;
 
         ArrayList<Integer> images = new ArrayList<>();
         images.add(R.drawable.carousel1);
@@ -55,17 +60,13 @@ public class MainFragment extends Fragment {
         suggestions.add(new ProductDTO( R.drawable.suggest5,"(HOT)레드오렌지뱅쇼티플레저","안토시아닌이 풍부하게 들어간 레드오렌지 뱅쇼베이스에 와인 티백을 활용한 티플레져"));
 
 
-
-
-
-
-
-
-
         iv_main_banner = v.findViewById(R.id.iv_main_banner);
         imgSlider = v.findViewById(R.id.imgSlider);
         recv_suggest = v.findViewById(R.id.recv_suggest);
         recv_notice = v.findViewById(R.id.recv_notice);
+        iv_shopping = v.findViewById(R.id.iv_shopping);
+        ln_coupon = v.findViewById(R.id.ln_coupon);
+        ln_stamp = v.findViewById(R.id.ln_stamp);
 
         tv_slider_indicator = v.findViewById(R.id.tv_slider_indicator);
 
@@ -105,8 +106,28 @@ public class MainFragment extends Fragment {
 
         recv_notice.setAdapter(new NoticeAdapter(inflater,getContext()));
         recv_notice.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
+
+        iv_shopping.setOnClickListener(this);
+        ln_stamp.setOnClickListener(this);
+        ln_coupon.setOnClickListener(this);
+
         return v;
     }
 
 
+    @Override
+    public void onClick(View v) {
+        if(v.getId() == R.id.ln_coupon){
+            Intent intent = new Intent(getContext(),CouponActivity.class);
+            startActivity(intent);
+            getActivity().overridePendingTransition(R.anim.in_to_left,R.anim.in_from_right);
+        } else if(v.getId() == R.id.ln_stamp){
+            Intent intent = new Intent(getContext(),StampActivity.class);
+            startActivity(intent);
+            getActivity().overridePendingTransition(R.anim.in_to_left,R.anim.in_from_right);
+        } else if(v.getId() == R.id.iv_shopping){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.megamgcoffee.co.kr/"));
+            startActivity(intent);
+        }
+    }
 }

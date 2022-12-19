@@ -20,6 +20,7 @@ public class PresentBoxFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_present_box, container, false);
         tb_present_box = v.findViewById(R.id.tb_present_box);
 
+
         getChildFragmentManager().beginTransaction().replace(R.id.fl_receive,new ReceivePresentFragment()).commit();
 
 
