@@ -5,15 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.lastproject.middle.ApiClient;
-import com.example.lastproject.middle.CommonMethod;
-import com.google.gson.Gson;
+import com.example.conn.ApiClient;
+import com.example.conn.CommonMethod;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void result(boolean isResult, String data) {
                 if(isResult)
-                    Log.d("TAG", "result: "+data);
+                    Log.d("로그", "result: "+data);
             }
         });
 

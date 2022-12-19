@@ -1,4 +1,4 @@
-package com.example.lastproject.middle;
+package com.example.conn;
 
 import java.util.HashMap;
 

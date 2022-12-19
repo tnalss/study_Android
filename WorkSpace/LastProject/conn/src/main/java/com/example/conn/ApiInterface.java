@@ -1,4 +1,4 @@
-package com.example.lastproject.middle;
+package com.example.conn;
 
 import java.util.HashMap;
 
@@ -7,7 +7,6 @@ import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
 import retrofit2.http.Url;
