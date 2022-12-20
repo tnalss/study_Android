@@ -7,10 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.Signature;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.example.a13_clone_mgc.card.CardFragment;
@@ -61,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
         changeFragment(new MainFragment());
 
         btm_nav = findViewById(R.id.btm_nav);
+
+        //dialog를 위한 세팅 https://wuny-dev.tistory.com/m/19
+        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+        layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+        layoutParams.dimAmount=0.8f;
+        getWindow().setAttributes(layoutParams);
+
+
 
         btm_nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

@@ -1,9 +1,12 @@
 package com.example.a13_clone_mgc.main;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +42,19 @@ public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHold
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.tv_suggest_name.setText(list.get(position).getName());
         Glide.with(context).load(list.get(position).getImageSrc()).dontAnimate().into(holder.cv_suggest_img);
+        int i = position;
+        holder.rl_each.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                PickOne pickOne = new PickOne(v.getContext(),list.get(i));
+                //둥근 다이어로그만들기 위해 아래 코드 넣어줌
+                //https://stackoverflow.com/questions/28937106/how-to-make-custom-dialog-with-rounded-corners-in-android
+                pickOne.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                pickOne.show();
+            }
+        });
+
     }
 
     @Override
@@ -49,11 +65,16 @@ public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder{
         CircleImageView cv_suggest_img;
         TextView tv_suggest_name;
+        RelativeLayout rl_each;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             cv_suggest_img = itemView.findViewById(R.id.cv_suggest_img);
             tv_suggest_name = itemView.findViewById(R.id.tv_suggest_name);
+            rl_each = itemView.findViewById(R.id.rl_each);
+
+
+
         }
     }
 

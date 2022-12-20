@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="575dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/rounded_edge_white">
+
+    <ImageView
+        android:id="@+id/iv_product"
+        android:layout_gravity="center"
+        android:src="@drawable/suggest1"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"/>
+    <TextView
+        android:id="@+id/tv_product_name"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:padding="10dp"
+        android:layout_gravity="center"
+        android:text="스모어블랙쿠키프라페"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/tv_product_detail"
+        android:padding="10dp"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:text="진한 초코스무디에 바삭한 쿠키를 넣어 퐁신퐁신한 마시멜로우 잼과 함께 달콤하게 즐기는 스무디"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"/>
+
+    <LinearLayout
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_order"
+            android:layout_weight="1"
+            android:src="@drawable/order_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/iv_send"
+            android:src="@drawable/send_btn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_close"
+        android:backgroundTint="#E8E4E0"
+        android:textStyle="bold"
+        android:textColor="#412308"
+        android:textSize="20sp"
+        android:text="닫기"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+
+</LinearLayout>
