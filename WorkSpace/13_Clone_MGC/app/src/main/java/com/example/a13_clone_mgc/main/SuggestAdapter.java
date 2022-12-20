@@ -1,6 +1,7 @@
 package com.example.a13_clone_mgc.main;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 
-public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHolder>{
+public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHolder> {
     private LayoutInflater inflater;
     private Context context;
     private ArrayList<ProductDTO> list;
@@ -52,6 +53,9 @@ public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHold
                 //https://stackoverflow.com/questions/28937106/how-to-make-custom-dialog-with-rounded-corners-in-android
                 pickOne.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 pickOne.show();
+
+
+
             }
         });
 

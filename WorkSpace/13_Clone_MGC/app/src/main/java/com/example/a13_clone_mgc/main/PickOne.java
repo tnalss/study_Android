@@ -2,10 +2,12 @@ package com.example.a13_clone_mgc.main;
 
 import android.app.Dialog;
 import android.content.Context;
+
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,6 +41,20 @@ public class PickOne extends Dialog {
             }
         });
 
+        iv_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        iv_send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
     }
+
 }

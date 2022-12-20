@@ -27,7 +27,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     BottomNavigationView btm_nav;
     final String TAG="tag";
     double waitTime=0;
@@ -61,7 +61,12 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
+
+
         changeFragment(new MainFragment());
+
+
+
 
         btm_nav = findViewById(R.id.btm_nav);
 
@@ -70,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
         layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
         layoutParams.dimAmount=0.8f;
         getWindow().setAttributes(layoutParams);
-
 
 
         btm_nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -106,4 +110,6 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed(); // 액티비티 종료
         }
     }
+
+
 }

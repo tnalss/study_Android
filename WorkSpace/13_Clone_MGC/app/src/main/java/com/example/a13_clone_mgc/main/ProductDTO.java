@@ -3,13 +3,24 @@ package com.example.a13_clone_mgc.main;
 import java.io.Serializable;
 
 public class ProductDTO implements Serializable {
-    private int imageSrc;
+
+
+    private int imageSrc,price;
     private String name,desc;
 
-    public ProductDTO(int imageSrc, String name, String desc) {
+    public ProductDTO(int imageSrc, int price, String name, String desc) {
         this.imageSrc = imageSrc;
+        this.price = price;
         this.name = name;
         this.desc = desc;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public int getImageSrc() {
