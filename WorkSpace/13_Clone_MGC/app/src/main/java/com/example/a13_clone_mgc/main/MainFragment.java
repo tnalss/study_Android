@@ -68,6 +68,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         ln_coupon = v.findViewById(R.id.ln_coupon);
         ln_stamp = v.findViewById(R.id.ln_stamp);
 
+
         tv_slider_indicator = v.findViewById(R.id.tv_slider_indicator);
 
         Glide.with(v.getContext()).load(R.drawable.mainbanner).into(iv_main_banner);
@@ -121,13 +122,16 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             Intent intent = new Intent(getContext(),CouponActivity.class);
             startActivity(intent);
             getActivity().overridePendingTransition(R.anim.in_to_left,R.anim.in_from_right);
+
         } else if(v.getId() == R.id.ln_stamp){
             Intent intent = new Intent(getContext(),StampActivity.class);
             startActivity(intent);
             getActivity().overridePendingTransition(R.anim.in_to_left,R.anim.in_from_right);
+
         } else if(v.getId() == R.id.iv_shopping){
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.megamgcoffee.co.kr/"));
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.megamgccoffee.co.kr/"));
             startActivity(intent);
         }
     }
+
 }
