@@ -1,7 +1,8 @@
 package com.example.a13_clone_mgc.main;
 
+
 import android.content.Context;
-import android.content.DialogInterface;
+
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -26,10 +28,14 @@ public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHold
     private Context context;
     private ArrayList<ProductDTO> list;
 
+
     public SuggestAdapter(LayoutInflater inflater, Context context, ArrayList<ProductDTO> list) {
         this.inflater = inflater;
         this.context = context;
         this.list = list;
+
+
+
     }
 
     @NonNull
@@ -54,8 +60,6 @@ public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHold
                 pickOne.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 pickOne.show();
 
-
-
             }
         });
 
@@ -76,8 +80,6 @@ public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHold
             cv_suggest_img = itemView.findViewById(R.id.cv_suggest_img);
             tv_suggest_name = itemView.findViewById(R.id.tv_suggest_name);
             rl_each = itemView.findViewById(R.id.rl_each);
-
-
 
         }
     }

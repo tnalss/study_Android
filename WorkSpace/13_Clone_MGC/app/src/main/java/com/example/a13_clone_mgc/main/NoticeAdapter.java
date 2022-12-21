@@ -16,6 +16,7 @@ public class NoticeAdapter extends RecyclerView.Adapter<NoticeAdapter.ViewHolder
     LayoutInflater inflater;
     Context context;
 
+
     public NoticeAdapter(LayoutInflater inflater, Context context) {
         this.inflater = inflater;
         this.context = context;

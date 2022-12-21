@@ -18,6 +18,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <TextView
+            android:id="@+id/tv_account_setting"
             android:textSize="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,6 +30,7 @@
             android:text=" | "/>
 
         <TextView
+            android:id="@+id/tv_customer_service"
             android:textSize="18dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,6 +39,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_username"
         android:textColor="@color/black"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
@@ -53,35 +56,44 @@
         />
 
         <TextView
+            android:id="@+id/tv_stamp"
          style="@style/more_list_style"
          android:text="스탬프"/>
 
         <TextView
+            android:id="@+id/tv_coupon"
          style="@style/more_list_style"
          android:text="쿠폰"/>
 
         <!--주문-->
         <TextView
+
             style="@style/more_info_title"
             android:text="주문" />
 
         <TextView
+            android:id="@+id/tv_megaorder"
             style="@style/more_list_style"
             android:text="메가 오더"/>
 
         <TextView
+            android:id="@+id/tv_order_history"
             style="@style/more_list_style"
             android:text="주문 내역"/>
         <TextView
+            android:id="@+id/tv_present"
             style="@style/more_list_style"
             android:text="선물하기"/>
         <TextView
+            android:id="@+id/tv_card"
             style="@style/more_list_style"
             android:text="메가선불카드"/>
         <TextView
+            android:id="@+id/tv_easy_card"
             style="@style/more_list_style"
             android:text="간편카드 관리"/>
         <TextView
+            android:id="@+id/tv_buy_coupon"
             style="@style/more_list_style"
             android:text="상품권 대량 구매 신청"/>
 
@@ -91,9 +103,11 @@
             style="@style/more_info_title"
             android:text="새소식" />
          <TextView
+             android:id="@+id/tv_event"
             style="@style/more_list_style"
             android:text="이벤트"/>
         <TextView
+            android:id="@+id/tv_notice"
             style="@style/more_list_style"
             android:text="공지사항"/>
         <!--약관 및 정책 -->
@@ -101,6 +115,7 @@
             style="@style/more_info_title"
             android:text="약관 및 정책" />
          <TextView
+             android:id="@+id/tv_policy"
             style="@style/more_list_style"
             android:text="이용약관"/>
 

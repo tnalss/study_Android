@@ -9,7 +9,7 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_centerHorizontal="true"
         android:id="@+id/cv_suggest_img"
-        android:src="@drawable/suggest1"
+        android:src="@drawable/product1"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:civ_circle_background_color="#dadada"

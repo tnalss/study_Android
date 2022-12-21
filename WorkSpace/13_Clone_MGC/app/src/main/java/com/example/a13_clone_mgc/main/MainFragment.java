@@ -1,10 +1,6 @@
 package com.example.a13_clone_mgc.main;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.Signature;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -14,22 +10,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Handler;
-import android.util.Base64;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.a13_clone_mgc.R;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -42,7 +34,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         ImageView iv_main_banner,iv_shopping;
         ViewPager2 imgSlider;
         RecyclerView recv_suggest,recv_notice;
-        TextView tv_slider_indicator;
+        TextView tv_slider_indicator,tv_more;
         Timer timer;
         LinearLayout ln_coupon,ln_stamp;
 
@@ -53,12 +45,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         images.add(R.drawable.carousel4);
         images.add(R.drawable.carousel5);
         ArrayList<ProductDTO> suggestions = new ArrayList<>();
-        suggestions.add(new ProductDTO( R.drawable.suggest1,3500,"스모어블랙쿠키프라페","진한 초코스무디에 바삭한 쿠키를 넣어 퐁신퐁신한 마시멜로우 잼과 함께 달콤하게 즐기는 스무디"));
-        suggestions.add(new ProductDTO( R.drawable.suggest2,4000,"따끈따끈간식꾸러미","겨울에 생각나는 팥붕어빵,초코조개빵,앙버터호두과자로 구성된 따끈한 간식꾸러미"));
-        suggestions.add(new ProductDTO( R.drawable.suggest3,3800,"태극전사레드불에너지","우리나라 국기의 태극 문양을 표현한 트로피컬 맛의 에너지 드링크 (With Red Bull Sugarfree)"));
-        suggestions.add(new ProductDTO( R.drawable.suggest4,3700,"붉은악마레드불에너지","월드컵의 상징 붉은악마를 표현한 새콤달콤한 체리콕 맛의 에너지 드링크 (With Red Bull Sugarfree)"));
-        suggestions.add(new ProductDTO( R.drawable.suggest5,3600,"(HOT)레드오렌지뱅쇼티플레저","안토시아닌이 풍부하게 들어간 레드오렌지 뱅쇼베이스에 와인 티백을 활용한 티플레져"));
-
+        suggestions.add(new ProductDTO( R.drawable.product1,4400,"스모어블랙쿠키프라페","진한 초코스무디에 바삭한 쿠키를 넣어 퐁신퐁신한 마시멜로우 잼과 함께 달콤하게 즐기는 스무디"));
+        suggestions.add(new ProductDTO( R.drawable.product2,3500,"따끈따끈간식꾸러미","겨울에 생각나는 팥붕어빵,초코조개빵,앙버터호두과자로 구성된 따끈한 간식꾸러미"));
+        suggestions.add(new ProductDTO( R.drawable.product3,4400,"태극전사레드불에너지","우리나라 국기의 태극 문양을 표현한 트로피컬 맛의 에너지 드링크 (With Red Bull Sugarfree)"));
+        suggestions.add(new ProductDTO( R.drawable.product4,4400,"붉은악마레드불에너지","월드컵의 상징 붉은악마를 표현한 새콤달콤한 체리콕 맛의 에너지 드링크 (With Red Bull Sugarfree)"));
+        suggestions.add(new ProductDTO( R.drawable.product5,3900,"(HOT)레드오렌지뱅쇼티플레저","안토시아닌이 풍부하게 들어간 레드오렌지 뱅쇼베이스에 와인 티백을 활용한 티플레져"));
 
         iv_main_banner = v.findViewById(R.id.iv_main_banner);
         imgSlider = v.findViewById(R.id.imgSlider);
@@ -67,7 +58,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         iv_shopping = v.findViewById(R.id.iv_shopping);
         ln_coupon = v.findViewById(R.id.ln_coupon);
         ln_stamp = v.findViewById(R.id.ln_stamp);
-
+        tv_more = v.findViewById(R.id.tv_more);
 
         tv_slider_indicator = v.findViewById(R.id.tv_slider_indicator);
 
@@ -111,6 +102,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         iv_shopping.setOnClickListener(this);
         ln_stamp.setOnClickListener(this);
         ln_coupon.setOnClickListener(this);
+        tv_more.setOnClickListener(this);
 
         return v;
     }
@@ -131,7 +123,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         } else if(v.getId() == R.id.iv_shopping){
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.megamgccoffee.co.kr/"));
             startActivity(intent);
+
+        } else if ( v.getId() == R.id.tv_more){
+
         }
     }
+
 
 }
