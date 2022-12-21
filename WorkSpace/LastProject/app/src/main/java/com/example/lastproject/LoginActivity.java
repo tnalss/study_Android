@@ -1,5 +1,6 @@
 package com.example.lastproject;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -23,6 +24,12 @@ import com.kakao.sdk.common.KakaoSdk;
 import com.kakao.sdk.common.model.ClientErrorCause;
 import com.kakao.sdk.user.UserApiClient;
 import com.kakao.sdk.user.model.User;
+import com.navercorp.nid.NaverIdLoginSDK;
+import com.navercorp.nid.oauth.NidOAuthLogin;
+import com.navercorp.nid.oauth.OAuthLoginCallback;
+import com.navercorp.nid.oauth.view.NidOAuthLoginButton;
+import com.navercorp.nid.profile.NidProfileCallback;
+import com.navercorp.nid.profile.data.NidProfileResponse;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -35,8 +42,9 @@ public class LoginActivity extends AppCompatActivity {
     Button btn_login;
     EditText edt_id, edt_pw;
     ImageView imgv_kakao_login;
-
-
+    NidOAuthLoginButton buttonOAuthLoginImg;
+    
+    final String TAG = "로그";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,9 +54,15 @@ public class LoginActivity extends AppCompatActivity {
         edt_id = findViewById(R.id.edt_id);
         edt_pw = findViewById(R.id.edt_pw);
         imgv_kakao_login = findViewById(R.id.imgv_kakao_login);
+        buttonOAuthLoginImg = findViewById(R.id.buttonOAuthLoginImg);
 
         ApiClient.setBASEURL("http://192.168.0.15/middle/");
+
+        //카카오SDK 초기화
         KakaoSdk.init(this, "acb6f17c56349e3617a1057ea4b976c2");
+
+        //네이버SDK 초기화
+        NaverIdLoginSDK.INSTANCE.initialize(this, "jc0TvUqPpVAcscvLYPgz", "C7BBbocmZB", "LastProject");
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +88,38 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        buttonOAuthLoginImg.setOAuthLogin(new OAuthLoginCallback() {
+            @Override
+            public void onSuccess() {
+                Log.d(TAG, "onSuccess: ");
+                new NidOAuthLogin().callProfileApi(new NidProfileCallback<NidProfileResponse>() {
+                    @Override
+                    public void onSuccess(NidProfileResponse nidProfileResponse) {
+                        Log.d(TAG, "onSuccess: "+nidProfileResponse.getProfile().getEmail() );
+                    }
 
+                    @Override
+                    public void onFailure(int i, @NonNull String s) {
+
+                    }
+
+                    @Override
+                    public void onError(int i, @NonNull String s) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onFailure(int i, @NonNull String s) {
+                Log.d(TAG, "onFailure: ");
+            }
+
+            @Override
+            public void onError(int i, @NonNull String s) {
+                Log.d(TAG, "onError: ");
+            }
+        });
     }
 
     //      1JD158uA3VQVnyOfk+aOcG8TNwk=
