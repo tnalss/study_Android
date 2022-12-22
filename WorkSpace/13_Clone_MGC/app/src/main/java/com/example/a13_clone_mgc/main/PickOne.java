@@ -58,15 +58,14 @@ public class PickOne extends Dialog {
         iv_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                MainActivity activity = (MainActivity) mainFragment.getActivity();
+                Intent intent = new Intent(getContext(),SendNowActivity.class);
+                intent.putExtra("dto",productDTO);
+                activity.startActivity(intent);
+                activity.overridePendingTransition(R.anim.in_to_left,R.anim.in_from_right);
             }
         });
     }
 
-    public PickOne(@NonNull Context context, ProductDTO productDTO) {
-        super(context);
-
-
-    }
 
 }

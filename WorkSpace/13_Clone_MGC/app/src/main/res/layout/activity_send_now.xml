@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.SendNowActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/iv_left"
+            android:src="@drawable/ic_left"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <TextView
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:text="메뉴상세"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:padding="10dp"
+                android:id="@+id/iv_cart"
+                android:src="@drawable/ic_cart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginTop="3dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/rounded_edge_red"
+                android:layout_marginLeft="22dp"
+                android:textSize="11sp"
+                android:text="3"
+                android:layout_width="18dp"
+                android:layout_height="15dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_gravity="center"
+        android:src="@drawable/product1"
+        android:id="@+id/iv_product"
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+    <TextView
+        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"
+        android:text="물품명"
+        android:textSize="20dp"
+        android:id="@+id/tv_product_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_margin="20dp"
+        android:textSize="18dp"
+        android:layout_gravity="center"
+        android:text="상세설명"
+        android:id="@+id/tv_product_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"/>
+
+    <!-- -  1 +  단품 가격-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_minus"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/minuscircle"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/tv_qty"
+            android:padding="10dp"
+            android:textSize="30dp"
+            android:text="1"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/iv_plus"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:src="@drawable/addcircle"
+            android:layout_width="45dp"
+            android:layout_height="45dp"/>
+        <TextView
+            android:textColor="@color/black"
+            android:text="4444"
+            android:layout_marginRight="15dp"
+            android:textSize="30dp"
+            android:textAlignment="textEnd"
+            android:id="@+id/tv_product_price"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+    <!--상품 금액 가격-->
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:text="상품금액"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:textSize="25sp"
+            android:textColor="#eb4b56"
+            android:layout_marginRight="15dp"
+            android:text="4444원"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+<!--담기 선물하기 버튼-->
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="#412308"
+            android:text="담기"
+            android:backgroundTint="#e8e4e0"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"/>
+        <Button
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#412308"
+            android:text="선물하기"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="80dp"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+</LinearLayout>

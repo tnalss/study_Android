@@ -40,7 +40,6 @@ public class PresentMainFragment extends Fragment {
         food.add(new ProductDTO( R.drawable.product12,1500,"에스프레소","메가MGC커피 블렌딩 원두의 향미를 온전히 즐길 수 있는 메뉴"));
         food.add(new ProductDTO( R.drawable.product13,3200,"젤라또 아포가토", "바닐라 젤라또에 진한 에스프레소를 부어 만든 이탈리아 디저트"));
 
-
         list.add(new ProductDTO( R.drawable.product1,3500,"스모어블랙쿠키프라페","진한 초코스무디에 바삭한 쿠키를 넣어 퐁신퐁신한 마시멜로우 잼과 함께 달콤하게 즐기는 스무디"));
         list.add(new ProductDTO( R.drawable.product2,4000,"따끈따끈간식꾸러미","겨울에 생각나는 팥붕어빵,초코조개빵,앙버터호두과자로 구성된 따끈한 간식꾸러미"));
         list.add(new ProductDTO( R.drawable.product3,3800,"태극전사레드불에너지","우리나라 국기의 태극 문양을 표현한 트로피컬 맛의 에너지 드링크 (With Red Bull Sugarfree)"));
@@ -52,10 +51,9 @@ public class PresentMainFragment extends Fragment {
         card.add(new ProductDTO(R.drawable.card3,30000,"3만원 상품권","메가커피 3만원 상품권입니다."));
         card.add(new ProductDTO(R.drawable.card3,50000,"5만원 상품권","메가커피 5만원 상품권입니다."));
 
-
-        recv_food.setAdapter(new SuggestAdapter(inflater,getContext(),food));
-        recv_best.setAdapter(new SuggestAdapter(inflater,getContext(),list));
-        recv_card.setAdapter(new SuggestAdapter(inflater,getContext(),card));
+        recv_food.setAdapter(new PresentAdapter(inflater,this,food));
+        recv_best.setAdapter(new PresentAdapter(inflater,this,list));
+        recv_card.setAdapter(new PresentAdapter(inflater,this,card));
 
         recv_food.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         recv_best.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
