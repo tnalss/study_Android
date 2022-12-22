@@ -22,20 +22,23 @@ import java.util.ArrayList;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-
 public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHolder> {
     private LayoutInflater inflater;
     private Context context;
     private ArrayList<ProductDTO> list;
+    MainFragment mainFragment;
 
+    public SuggestAdapter(LayoutInflater inflater, Context context, ArrayList<ProductDTO> list, MainFragment mainFragment) {
+        this.inflater = inflater;
+        this.context = context;
+        this.list = list;
+        this.mainFragment = mainFragment;
+    }
 
     public SuggestAdapter(LayoutInflater inflater, Context context, ArrayList<ProductDTO> list) {
         this.inflater = inflater;
         this.context = context;
         this.list = list;
-
-
-
     }
 
     @NonNull
@@ -54,7 +57,7 @@ public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHold
             @Override
             public void onClick(View v) {
 
-                PickOne pickOne = new PickOne(v.getContext(),list.get(i));
+                PickOne pickOne = new PickOne(v.getContext(),list.get(i) , mainFragment);
                 //둥근 다이어로그만들기 위해 아래 코드 넣어줌
                 //https://stackoverflow.com/questions/28937106/how-to-make-custom-dialog-with-rounded-corners-in-android
                 pickOne.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -80,7 +83,6 @@ public class SuggestAdapter extends RecyclerView.Adapter<SuggestAdapter.ViewHold
             cv_suggest_img = itemView.findViewById(R.id.cv_suggest_img);
             tv_suggest_name = itemView.findViewById(R.id.tv_suggest_name);
             rl_each = itemView.findViewById(R.id.rl_each);
-
         }
     }
 

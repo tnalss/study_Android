@@ -7,7 +7,9 @@ import android.util.Log;
 
 import com.example.conn.ApiClient;
 import com.example.conn.CommonMethod;
+import com.example.lastproject.customer.CustomerVO;
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 
 public class MainActivity extends AppCompatActivity {

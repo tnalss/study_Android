@@ -93,7 +93,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 tv_slider_indicator.setText(position+1+ "/"+suggestions.size());
             }
         });
-        recv_suggest.setAdapter(new SuggestAdapter(inflater,getContext(),suggestions));
+        recv_suggest.setAdapter(new SuggestAdapter(inflater,getContext(),suggestions,this));
         recv_suggest.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
 
         recv_notice.setAdapter(new NoticeAdapter(inflater,getContext()));

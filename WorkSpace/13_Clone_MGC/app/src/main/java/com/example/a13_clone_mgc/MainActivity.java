@@ -28,7 +28,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class MainActivity extends AppCompatActivity{
-    BottomNavigationView btm_nav;
+    public BottomNavigationView btm_nav;
     final String TAG="tag";
     double waitTime=0;
     /*해시키 구하는 메소드 for 카카오맵*/

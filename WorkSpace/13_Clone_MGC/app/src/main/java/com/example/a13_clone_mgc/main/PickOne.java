@@ -12,10 +12,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.example.a13_clone_mgc.MainActivity;
 import com.example.a13_clone_mgc.R;
 
 public class PickOne extends Dialog {
-    public PickOne(@NonNull Context context, ProductDTO productDTO) {
+
+    MainFragment mainFragment;
+
+    public PickOne(@NonNull Context context, ProductDTO productDTO , MainFragment mainFragment) {
         super(context);
         setContentView(R.layout.dialog_pick_one);
         TextView tv_product_name,tv_product_detail;
@@ -44,7 +48,9 @@ public class PickOne extends Dialog {
         iv_order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                dismiss();
+                MainActivity activity = (MainActivity) mainFragment.getActivity();
+                activity.btm_nav.setSelectedItemId(R.id.btm_item3);
 
             }
         });
@@ -55,6 +61,11 @@ public class PickOne extends Dialog {
 
             }
         });
+    }
+
+    public PickOne(@NonNull Context context, ProductDTO productDTO) {
+        super(context);
+
 
     }
 
