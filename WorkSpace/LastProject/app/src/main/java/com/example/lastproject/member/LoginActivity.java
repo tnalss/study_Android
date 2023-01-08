@@ -1,4 +1,4 @@
-package com.example.lastproject;
+package com.example.lastproject.member;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.conn.ApiClient;
 import com.example.conn.CommonMethod;
+import com.example.lastproject.R;
 import com.google.gson.Gson;
 import com.kakao.sdk.auth.model.OAuthToken;
 import com.kakao.sdk.common.KakaoSdk;
@@ -39,7 +40,7 @@ import kotlin.jvm.functions.Function2;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button btn_login;
+    Button btn_login,btn_join;
     EditText edt_id, edt_pw;
     ImageView imgv_kakao_login;
     NidOAuthLoginButton buttonOAuthLoginImg;
@@ -55,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         edt_pw = findViewById(R.id.edt_pw);
         imgv_kakao_login = findViewById(R.id.imgv_kakao_login);
         buttonOAuthLoginImg = findViewById(R.id.buttonOAuthLoginImg);
-
+        btn_join = findViewById(R.id.btn_join);
         ApiClient.setBASEURL("http://192.168.0.15/middle/");
 
         //카카오SDK 초기화
@@ -63,6 +64,13 @@ public class LoginActivity extends AppCompatActivity {
 
         //네이버SDK 초기화
         NaverIdLoginSDK.INSTANCE.initialize(this, "jc0TvUqPpVAcscvLYPgz", "C7BBbocmZB", "LastProject");
+
+
+        btn_join.setOnClickListener(v -> {
+            Intent intent = new Intent(this,JoinActivity.class);
+            startActivity(intent);
+        });
+
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override

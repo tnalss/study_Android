@@ -2,11 +2,15 @@ package com.example.conn;
 
 import java.util.HashMap;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Path;
 import retrofit2.http.QueryMap;
 import retrofit2.http.Url;
@@ -28,5 +32,12 @@ public interface ApiInterface {
     //url과 param이 전부 노출되는 형태 (post와 다름)
     @GET("{path}")
     Call<String> connGet(@Path("path") String url, @QueryMap HashMap<String,Object> params);
+
+    @POST("{path}") //localhost/middle/{path}
+    @Multipart //<= @FormUrlEncoded 사용을 못함, @Path어노테이션을 써줘야함.
+    Call<String> connFilePost(@Path("path") String url
+        , @Part("param") RequestBody param //데이터 부분
+        , @Part MultipartBody.Part file //파일 부분
+    );//안드로이드는 폼태그가 없으니 멀티파트 방식으로 요청을 한다.
 
 }
